@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PRISM — PRIor from corpus Statistics for topic Modeling</title>
-  <meta name="description" content="PRISM: corpus-intrinsic prior initialization for LDA from co-occurrence statistics. Accepted to TMLR." />
+  <meta
+    name="description"
+    content="PRISM: corpus-intrinsic prior initialization for LDA from co-occurrence statistics. Accepted to TMLR."
+  />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
@@ -19,15 +22,15 @@
       <div class="btnrow">
         <a class="btn" href="https://openreview.net/pdf?id=454v3Xbtza" target="_blank" rel="noopener">Paper (PDF)</a>
         <a class="btn" href="https://openreview.net/forum?id=454v3Xbtza&noteId=nHPRY2Dqz7" target="_blank" rel="noopener">OpenReview</a>
-        <a class="btn" href="https://github.com/tal-ishon/PRISM" target="_blank" rel="noopener">Code</a>
+        <a class="btn" href="https://github.com/shaham-lab/PRISM" target="_blank" rel="noopener">Code</a>
         <a class="btn" href="#install">Install</a>
         <a class="btn" href="#quickstart">Quickstart</a>
-        <a class="btn" href="files/bibtex.txt">BibTeX</a>
+        <a class="btn" href="#citation">BibTeX</a>
       </div>
 
-      <img class="teaser" src="assets/img/hero.png" alt="PRISM framework overview" />
+      <img class="teaser" src="assets/img/PRISM_Framework.png" alt="PRISM framework overview" />
       <p class="caption center">
-        Framework overview (replace/update with your preferred “hero” figure).
+        PRISM framework overview.
       </p>
     </div>
   </header>
@@ -37,7 +40,6 @@
       <a href="#abstract">Abstract</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
-      <a href="#wid">WID</a>
       <a href="#install">Install</a>
       <a href="#quickstart">Quickstart</a>
       <a href="#citation">Citation</a>
@@ -50,14 +52,14 @@
         <h2>Abstract</h2>
         <p>
           Topic modeling seeks to uncover latent semantic structure in text, with LDA providing a foundational probabilistic framework.
-          While recent methods often incorporate external knowledge (e.g., pre-trained embeddings), such reliance limits applicability in
-          emerging or underexplored domains. We introduce <b>PRISM</b>, a corpus-intrinsic method that derives a Dirichlet parameter from
-          word co-occurrence statistics to initialize LDA without altering its generative process. Experiments on text and single cell RNA-seq
-          data show that PRISM improves topic coherence and interpretability, rivaling models that rely on external knowledge. These results
-          underscore the value of corpus-driven initialization for topic modeling in resource-constrained settings.
+          While many recent methods incorporate external knowledge, such reliance can limit applicability in emerging or underexplored domains.
+          We introduce <b>PRISM</b>, a corpus-intrinsic method that derives a Dirichlet parameter from word co-occurrence statistics to initialize
+          LDA without altering its generative process. Experiments on text and single-cell RNA-seq data show that PRISM improves topic coherence
+          and interpretability, often rivaling externally guided approaches.
         </p>
         <p class="small muted">
-          Paper: <a href="https://openreview.net/forum?id=454v3Xbtza&noteId=nHPRY2Dqz7" target="_blank" rel="noopener">OpenReview PDF</a>
+          Read the paper on
+          <a href="https://openreview.net/forum?id=454v3Xbtza&noteId=nHPRY2Dqz7" target="_blank" rel="noopener">OpenReview</a>.
         </p>
       </div>
     </section>
@@ -66,15 +68,15 @@
       <div class="container">
         <h2>Method</h2>
         <p>
-          PRISM is a corpus-intrinsic initialization method for LDA. It constructs a PPMI-based word similarity graph from document-level
-          co-occurrence, extracts diffusion-map embeddings (anisotropic normalization), softly clusters embeddings with a GMM to obtain
-          topic-word distributions, estimates a Dirichlet prior β̂ via method-of-moments, and initializes LDA with β̂—providing prior-like
-          guidance while keeping LDA's generative process unchanged.
+          PRISM is a corpus-intrinsic initialization framework for LDA. It first computes a PPMI matrix from document-level co-occurrence,
+          builds a word-similarity graph, and applies diffusion maps to produce corpus-derived embeddings. It then fits a GMM over these embeddings,
+          converts soft memberships into topic-word distributions, estimates a vocabulary-level Dirichlet prior, and initializes MALLET LDA with
+          that prior while keeping the LDA generative process unchanged.
         </p>
 
         <div class="figureblock">
-          <img class="figure" src="assets/img/method.png" alt="PRISM method overview" />
-          <div class="caption">Method overview (replace with a dedicated method figure if desired).</div>
+          <img class="figure" src="assets/img/PRISM_Framework.png" alt="PRISM method overview" />
+          <div class="caption">Overall PRISM framework.</div>
         </div>
       </div>
     </section>
@@ -86,108 +88,98 @@
         <h3>Heatmaps</h3>
         <div class="grid2">
           <div class="figureblock">
-            <img class="figure" src="assets/img/heatmap_prism.png" alt="PRISM heatmap" />
-            <div class="caption">PRISM heatmap (replace caption as needed).</div>
+            <img class="figure" src="assets/img/PRISM_heatmap_m10.png" alt="PRISM heatmap on M10" />
+            <div class="caption">PRISM heatmap on M10.</div>
           </div>
           <div class="figureblock">
-            <img class="figure" src="assets/img/heatmap_fastopic.png" alt="Baseline heatmap" />
-            <div class="caption">Baseline heatmap (replace caption as needed).</div>
+            <img class="figure" src="assets/img/fastopic_heatmap_m10.png" alt="FASTopic heatmap on M10" />
+            <div class="caption">FASTopic heatmap on M10.</div>
           </div>
         </div>
 
-        <h3>Top-10 words comparisons / tables</h3>
+        <h3>Example topic comparison</h3>
         <div class="figureblock">
-          <img class="figure" src="assets/img/bbc_results.png" alt="BBC results table/figure" />
-          <div class="caption">Example results figure (replace with your preferred highlight figure).</div>
+          <img class="figure" src="assets/img/5BBC_results.png" alt="BBC topic comparison results" />
+          <div class="caption">Example topic comparison results on BBC.</div>
         </div>
-
-        <p class="small muted">
-          Add additional heatmaps / top-10-word comparison figures by placing them under <code>docs/assets/img/</code> and inserting them here.
-        </p>
       </div>
     </section>
 
-    <section id="wid" class="section alt">
-      <div class="container">
-        <h2>WID: Word Intrusion Detection</h2>
-        <p>
-          Word Intrusion Detection (WID) evaluates topic interpretability by asking an evaluator to identify an out-of-place word among a topic’s top
-          words (the “intruder”). To scale this human-centric task, we use an LLM as an automated judge (following prior work), prompting it to select
-          the intruder for each topic instance.
-        </p>
-        <p class="small muted">
-          When you're ready, add your WID framework figure + WID results table to this section.
-        </p>
-      </div>
-    </section>
-
-    <section id="install" class="section">
+    <section id="install" class="section alt">
       <div class="container">
         <h2>Installation</h2>
 
-        <h3>1) Clone this repo</h3>
+        <h3>1) Clone the repository</h3>
         <pre><code>git clone https://github.com/shaham-lab/PRISM.git
 cd PRISM</code></pre>
 
-        <h3>2) Run the setup script (downloads + patches + builds MALLET)</h3>
-        <pre><code>chmod +x setup_mallet.sh
-./setup_mallet.sh</code></pre>
+        <h3>2) Create a virtual environment and install dependencies</h3>
+        <pre><code>python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt</code></pre>
 
+        <h3>3) Build the patched MALLET dependency</h3>
         <p class="muted">
-          This downloads MALLET 2.0.8 source, renames it to <code>./mallet</code>, replaces <code>./mallet/src/cc/mallet/</code> with the patched
-          directory (<code>beta_vector_patch/mallet</code>), then runs <code>ant clean &amp;&amp; ant</code>.
+          This repository includes a patched MALLET source tree under <code>beta_vector_patch/mallet</code>. Make sure your local MALLET build
+          supports the vector-valued prior expected by PRISM before running the full pipeline.
         </p>
 
-        <h3>3) Verify it worked</h3>
-        <pre><code>cd mallet
-./bin/mallet --help</code></pre>
-
-        <h3>Troubleshooting (common)</h3>
-        <ul>
-          <li><code>ant: command not found</code> → install Apache Ant, then rerun the script.</li>
-          <li>Java issues → check <code>java -version</code> and <code>javac -version</code>, ensure a working JDK is installed.</li>
-        </ul>
+        <h3>4) Verify the dataset layout</h3>
+        <pre><code>data/
+├── 20NewsGroup.json
+├── BBC.json
+├── M10.json
+├── DBLP.json
+└── TrumpTweets.json</code></pre>
       </div>
     </section>
 
-    <section id="quickstart" class="section alt">
+    <section id="quickstart" class="section">
       <div class="container">
         <h2>Quickstart</h2>
 
-        <p class="muted">Your entry point is <code>src/main.py</code>.</p>
+        <p class="muted">Run the pipeline from the repository root.</p>
 
-        <p class="muted">Run from repo root:</p>
-        <pre><code>python src/main.py &lt;DATASET&gt; &lt;METRIC&gt; &lt;NUM_TOPICS&gt; &lt;NUM_ITERATIONS&gt; &lt;RUN_NUMBER&gt; &lt;SEED&gt;</code></pre>
+        <h3>1) Create corpus-intrinsic word embeddings</h3>
+        <pre><code>python create_word_embeddings.py \
+  --n_comp 5 \
+  --dataset BBC \
+  --metrics prism</code></pre>
 
-        <p class="muted">Example:</p>
-        <pre><code>python src/main.py BBC prism 5 1000 1 42</code></pre>
+        <h3>2) Estimate the Dirichlet prior</h3>
+        <pre><code>python methods_of_moments.py \
+  --n_comp 5 \
+  --dataset BBC \
+  --metric prism</code></pre>
 
-        <p class="small muted">
-          Alternatively: <code>cd src</code> then <code>python main.py ...</code>
-        </p>
+        <h3>3) Run LDA with the informative prior</h3>
+        <pre><code>python main.py \
+  --n_comp 20 \
+  --dataset 20NewsGroup \
+  --metric prism \
+  --num_iterations 1000 \
+  --run_number FINAL \
+  --seed 0</code></pre>
       </div>
     </section>
 
-    <section id="citation" class="section">
+    <section id="citation" class="section alt">
       <div class="container">
         <h2>Citation</h2>
-        <pre class="bibtex"><code>@article{ishon_prism_tmlr,
-  title   = {PRISM: PRIor from corpus Statistics for topic Modeling},
-  author  = {Ishon, Tal and Goldberg, Yoav and Shaham, Uri},
-  journal = {Transactions on Machine Learning Research (TMLR)},
-  year    = {2026},
-  note    = {Accepted. OpenReview:  https://openreview.net/forum?id=454v3Xbtza&noteId=nHPRY2Dqz7}
+        <pre class="bibtex"><code>@article{ishon2026prism,
+  title={PRISM: PRIor from corpus Statistics for topic Modeling},
+  author={Ishon, Tal and Goldberg, Yoav and Shaham, Uri},
+  journal={Transactions on Machine Learning Research (TMLR)},
+  year={2026},
+  note={OpenReview: https://openreview.net/forum?id=454v3Xbtza&noteId=nHPRY2Dqz7}
 }</code></pre>
-        <p class="small muted">
-          BibTeX file: <a href="files/bibtex.txt">docs/files/bibtex.txt</a>
-        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container foot">
-      <span>PRISM · TMLR</span>
+      <span>PRISM · TMLR 2026</span>
       <span><a href="#top">Back to top</a></span>
     </div>
   </footer>
