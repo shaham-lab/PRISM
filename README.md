@@ -9,7 +9,7 @@ Authors: [Tal Ishon](https://www.linkedin.com/in/tal-ishon/), [Yoav Goldberg](li
 <a href="https://shaham-lab.github.io/PRISM/">
   <img src="https://img.shields.io/static/v1?label=Project&message=Website&color=9a031e" height="20.5">
 </a> 
-<a href="https://arxiv.org/????">
+<a href="https://arxiv.org/abs/2603.29406">
   <img src="https://img.shields.io/static/v1?label=Paper&message=arXiv&color=fb5607" height="20.5">
 </a>
 
@@ -59,7 +59,7 @@ PRISM is a corpus-intrinsic initialization pipeline for LDA with two stages:
 ```bash
 # 1) Clone repo
 
-git clone https://github.com/tal-ishon/PRISM.git
+git clone https://github.com/shaham-lab/PRISM.git
 cd PRISM
 
 # 2) Run the setup script
