@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PRISM: corpus-intrinsic prior initialization for LDA from co-occurrence statistics.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRISM: PRIor from corpus Statistics for topic Modeling</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PRISM: PRIor from corpus Statistics for topic Modeling</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Tal Ishon,</span>
+            <span class="author-block">Yoav Goldberg,</span>
+            <span class="author-block">Uri Shaham</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Bar-Ilan University</span>
+          </div>
+
+          <div class="is-size-5 venue-info">
+             TMLR 2026
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=454v3Xbtza" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.29406" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/shaham-lab/PRISM" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Topic modeling seeks to uncover latent semantic structure in text, with LDA providing a foundational probabilistic framework. While many recent methods incorporate external knowledge, such reliance can limit applicability in emerging or underexplored domains. We introduce <b>PRISM</b>, a corpus-intrinsic method that derives a Dirichlet parameter from word co-occurrence statistics to initialize LDA without altering its generative process.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<hr>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            PRISM is a novel framework for <strong>Latent Dirichlet Allocation (LDA)</strong> initialization. Unlike existing methods that rely on external knowledge or complex neural architectures, PRISM extracts semantic structure directly from the corpus itself. By bridging the gap between word co-occurrence statistics and probabilistic topic modeling, PRISM provides a robust starting point for LDA, ensuring high coherence and interpretability.
+          </p>
+          <img src="assets/img/PRISM_Framework.png" class="method-image" alt="PRISM Framework">
+        </div>
+      </div>
+    </div>
+
+<hr>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Seeing the Unseen: The PRISM Perspective</h2>
+    <p class="subtitle is-6">
+      PRISM is built upon three foundational principles that ensure interpretable and robust topic modeling. 
+      These pillars structure the design of our method and guide the research that follows.
+    </p>
+  </div>
+</div>
+
+<div class="columns is-centered is-variable is-4">
+  <div class="column is-4">
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="icon is-medium"><i class="fas fa-lightbulb"></i></span>
+        <h3 class="title is-4">Motivation</h3>
+      </div>
+      <div class="content">
+        <p>
+          Motivated by domains like <strong>biology</strong>, where data is often limited, noisy, and highly specialized. PRISM addresses the lack of external supervision by learning an informative prior directly from corpus-intrinsic statistics, enabling meaningful structure extraction when data is scarce.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-4">
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="icon is-medium"><i class="fas fa-tasks"></i></span>
+        <h3 class="title is-4">Method</h3>
+      </div>
+      <div class="content">
+        <p>
+          PRISM extracts semantic structure through word co-occurrence, embeddings, and soft clustering. It converts this into a topic-aware prior to initialize LDA. This leads to cleaner, more coherent topics without altering the original generative model or requiring external training.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-4">
+    <div class="pillar-card">
+      <div class="pillar-card-accent"></div>
+      <div class="pillar-header">
+        <span class="icon is-medium"><i class="fas fa-chart-line"></i></span>
+        <h3 class="title is-4">Insights</h3>
+      </div>
+      <div class="content">
+        <p>
+          By leveraging internal co-occurrence patterns, PRISM discovers highly interpretable topics. This is especially vital for biological research, where improved latent topics support the discovery of gene programs or biological processes in sparse, domain-specific datasets.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered mb-6">Experimental Results</h2>
+    
+    <div class="result-block">
+      <h3 class="title is-4">1. Qualitative Topic Coherence</h3>
+      <p class="content">
+        PRISM recovers more semantically consistent word groups compared to BERTopic and ProdLDA.
+      </p>
+      <div class="image-wrapper mb-6">
+        <img src="assets/img/image_158e93.png" class="result-img-main" alt="Topic Coherence">
+        <p class="image-caption">Figure 1: Comparison of top-10 words across different models.</p>
+      </div>
+    </div>
+
+    <div class="result-block">
+      <h3 class="title is-4">2. Specialized Domain Performance</h3>
+      <div class="image-wrapper">
+        <img src="assets/img/image_158ecd.png" class="result-img-special" alt="Specialized Domains">
+        <p class="image-caption">Figure 2: Top-10 words for Biology and Climate topics.</p>
+      </div>
+    </div>
+  </div>
+
+    <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered mb-6">Heatmap Analysis</h2>
+    
+    <div class="content has-text-justified mb-6">
+      <p>
+        The heatmaps visualize the probability mass distribution across topics (columns) and words (rows). PRISM (b) exhibits concentrated relevance scores and lower noise, demonstrating better topic separation compared to the uniform or highly chaotic distributions in other models.
+      </p>
+    </div>
+
+    <div class="heatmap-block">
+      <div class="image-wrapper centered-image">
+        <img src="assets/img/image_158f69.png" alt="BBC Heatmap (K=5)" class="result-img-heatmap">
+        <p class="image-caption is-size-6">BBC Dataset (K=5)</p>
+      </div>
+    </div>
+
+    <hr class="heatmap-divider">
+
+    <div class="heatmap-block">
+      <div class="image-wrapper centered-image">
+        <img src="assets/img/image_158f2b.png" alt="M10 Heatmap (K=10)" class="result-img-heatmap">
+        <p class="image-caption is-size-6">M10 Dataset (K=10)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="conclusion-box has-text-centered">
+      <h2 class="title is-3 conclusion-title">Conclusion</h2>
+      <div class="content conclusion-text">
+        <p>
+          PRISM shows that informative topic priors can be learned directly from corpus-intrinsic structure, leading to more coherent, organized, and interpretable topics. By strengthening LDA with a data-driven prior rather than changing its core model, PRISM provides a simple and principled way to improve topic discovery. Its corpus-intrinsic nature also makes it especially promising for specialized fields such as biology, where data is limited and external resources may be unavailable or poorly matched.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Citation</h2>
+        <pre><code>@article{
+            ishon2026prism,
+            title={PRISM}: {PRI}or from corpus Statistics for topic Modeling},
+            author={Tal Ishon and Yoav Goldberg and Uri Shaham},
+            journal={Transactions on Machine Learning Research},
+            issn={2835-8856},
+            year={2026},
+            url={https://openreview.net/forum?id=454v3Xbtza},
+            note={Featured Certification}
+</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>PRISM · TMLR 2026</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* Typography & General */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 1000;
+  margin-top: 1rem !important;
+}
+
+.publication-authors .author-block {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.venue-info {
+  margin-top: 10px;
+  color: #f6f2f2;
+}
+
+/* Button Customization */
+.publication-links {
+  margin-top: 20px;
+}
+
+.external-link {
+  margin-bottom: 10px;
+}
+
+/* Visuals */
+.method-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+hr {
+  background-color: #f5f5f5;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 3rem 0;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.hero {
+  background-color: #81bde2;
+}
+
+.section {
+  padding-top: 2rem;
+}
+
+footer {
+  background: linear-gradient(135deg, #3a539b 0%, #4a69bd 50%, #6a89cc 100%) !important;
+  color: #f6f2f2;
+  padding: 3rem 0 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+.hero {
+  background: linear-gradient(135deg, #3a539b 0%, #4a69bd 50%, #6a89cc 100%) !important;
+  padding: 4rem 0;
+}
+
+.publication-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800; 
+  color: white !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem !important;
+}
+
+.publication-authors, .venue-info {
+  font-family: 'Inter', sans-serif;
+  color: white !important;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.venue-info {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.button.is-white {
+  background-color: white;
+  border-color: transparent;
+  color: #363636;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.button.is-white:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+.publication-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Pillar Cards Styling */
+.pillar-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #3a539b; /* הפס הצבעוני בצד שמאל */
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+}
+
+.pillar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #3a539b;
+}
+
+.pillar-header .icon {
+  margin-right: 12px;
+  font-size: 1.5rem;
+}
+
+.pillar-header h3 {
+  margin-bottom: 0 !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.pillar-card .content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  text-align: justify;
+}
+
+.method-image-small {
+  margin-top: 1rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Subtitle adjustment */
+.subtitle.is-6 {
+  color: #666;
+  margin-bottom: 3rem !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-block {
+  margin-bottom: 5rem; 
+}
+
+hr + .section, .result-block + hr {
+  margin-top: 4rem;
+}
+
+.image-caption {
+  margin-top: 1.5rem !important; 
+  color: #7a7a7a;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.result-img-main {
+  max-height: 400px;
+  width: auto;
+  object-fit: contain;
+}
+
+.result-img-special {
+  max-height: 500px;
+  width: auto;
+  object-fit: contain;
+}
+
+.image-wrapper {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for Heatmaps Vertical Layout */
+.heatmap-block {
+  margin-bottom: 4rem; 
+  display: flex;
+  justify-content: center;
+}
+
+.result-img-heatmap {
+  max-width: 100%; 
+  height: auto; 
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.result-img-heatmap:hover {
+  transform: scale(1.02); 
+}
+
+.heatmap-divider {
+  margin: 3rem auto;
+  width: 50%;
+  border-top: 1px solid #eeeeee;
+}
+
+/* Adjusting image-wrapper for central vertical layout */
+.centered-image {
+  text-align: center;
+  max-width: 900px; 
+  width: 100%;
+}
+
+.conclusion-box {
+  background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+  padding: 4rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-top: 2rem;
+}
+
+.conclusion-title {
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 2rem !important;
+  font-weight: 700;
+}
+
+.conclusion-text {
+  font-family: 'Inter', sans-serif;
+  font-style: italic; 
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .conclusion-box {
+    padding: 2rem 1.5rem;
+  }
+}
